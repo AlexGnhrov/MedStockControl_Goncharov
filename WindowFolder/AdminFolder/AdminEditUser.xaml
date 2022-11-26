@@ -1,0 +1,104 @@
+﻿<Window x:Class="MedStockControl_Goncharov.WindowFolder.AdminFolder.AdminEditUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedStockControl_Goncharov.WindowFolder.AdminFolder"
+        mc:Ignorable="d"
+        Title="Редактирование работника"
+        Height="580" Width="740"
+        MinHeight="580" MinWidth="740"
+        MaxHeight="580" MaxWidth="740"
+        WindowStartupLocation="CenterScreen"
+        Icon="/MedStockControl_Goncharov;component/ResourceFolder/Dictionary/ImageFolder/MedLogo.jpg"
+        Loaded="Window_Loaded" KeyDown="Window_KeyDown"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="214"/>
+            <ColumnDefinition Width="33"/>
+            <ColumnDefinition Width="176" />
+            <ColumnDefinition Width="210"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+
+        <Label Content="Редактирование работника"
+               Grid.Column="3" Grid.Row="1"
+               Style="{DynamicResource LabelMain}" Grid.ColumnSpan="3"/>
+
+        <Label Content="ФИО работника"
+               Grid.Column="1" Grid.Row="3"
+               Style="{DynamicResource LabelSecond}" Grid.ColumnSpan="2"/>
+
+        <Label Content="Номер телефона"
+            Grid.Column="1" Grid.Row="5"
+            Style="{DynamicResource LabelSecond}" Grid.ColumnSpan="2" />
+
+
+        <Label Content="Данные пользователя"
+            Grid.Column="1" Grid.Row="9"
+            Style="{DynamicResource LabelSecond}" Grid.ColumnSpan="2"/>
+
+        <Label Content="Должность"
+            Grid.Column="1" Grid.Row="7"
+            Style="{DynamicResource LabelSecond}" Grid.ColumnSpan="2"  />
+
+
+        <TextBox x:Name="FSLNameStaffTB" Grid.Column="3" Grid.Row="3"
+                 TextChanged="FSLNameStaffTB_TextChanged" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="PhoneNumberTB" Grid.Column="3" Grid.Row="5"
+                 TextChanged="PhoneNumberTB_TextChanged" Grid.ColumnSpan="3"/>
+
+        <ComboBox x:Name="StaffPositionCB" Grid.Column="3" Grid.Row="7"
+                  SelectionChanged="StaffPositionCB_SelectionChanged"
+                   MouseDoubleClick="StaffPositionCB_DoubleClick" Grid.ColumnSpan="2"/>
+
+        <Button x:Name="EditUserBT" Content="Редактировать"
+                Grid.Column="4" Grid.Row="11"
+                Click="EditUser_Click"
+                IsEnabled="False" Margin="10" Grid.ColumnSpan="2"/>
+        <Button Content="Назад"
+                Grid.Column="1" Grid.Row="11"
+                Click="Close_Click" />
+
+
+        <ComboBox x:Name="UserCB" Grid.Column="3" Grid.Row="9"
+            SelectionChanged="UserCB_SelectionChanged"
+                  MouseDoubleClick="UserCB_DoubleClick" Grid.ColumnSpan="2" />
+
+        <Button x:Name="DeleteBT" Content="Удалить"
+            Grid.Column="3" Grid.Row="11"
+                Click="DeleteBT_Click"
+              Foreground="White"
+            BorderBrush="Gray"
+            Background="Gray" Margin="10" 
+                />
+        <Button x:Name="EditUserBT_Copy" Content="+"
+            Grid.Column="5" Grid.Row="7"
+            Click="AddConditon_Click"/>
+        
+        <Button x:Name="EditUserBT_Copy1" Content="+"
+            Grid.Column="5" Grid.Row="9"
+            Click="AddUserData_Click"/>
+
+    </Grid>
+</Window>

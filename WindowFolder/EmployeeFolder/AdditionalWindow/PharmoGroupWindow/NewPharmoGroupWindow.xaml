@@ -1,0 +1,48 @@
+﻿<Window x:Class="MedStockControl_Goncharov.WindowFolder.EmployeeFolder.AdditionalWindow.NewPharmoGroupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedStockControl_Goncharov.WindowFolder.EmployeeFolder.AdditionalWindow"
+        mc:Ignorable="d"
+        Title="Добавление условия отпуска"
+        WindowStartupLocation="CenterScreen"
+        Height="290" Width="500"
+        MinHeight="290" MinWidth="500"
+        MaxHeight="290" MaxWidth="500"
+        Icon="/MedStockControl_Goncharov;component/ResourceFolder/Dictionary/ImageFolder/MedLogo.jpg"
+        KeyDown="Window_KeyDown">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Добавление фарм.группы"
+               Grid.Row="1" Grid.Column="1"
+               Style="{DynamicResource LabelMain}" Grid.ColumnSpan="2"/>
+
+        <TextBox x:Name="PharmoGroup"
+                 Grid.Row="2" Grid.Column="1"
+                 Grid.ColumnSpan="2" TextChanged="PharmoGroup_TextChanged"/>
+
+        <Button Content="Добавить"
+                Name="AddNewGroupBT"
+                Grid.Column="2" Grid.Row="3"
+                Click="AddNewGroup"
+                IsEnabled="False" />
+        <Button Content="Назад"
+                Grid.Column="1" Grid.Row="3"
+                Click="Close_Click"/>
+    </Grid>
+</Window>

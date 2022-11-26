@@ -1,0 +1,172 @@
+﻿<Window x:Class="MedStockControl_Goncharov.WindowFolder.EmployeeFolder.MedAddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedStockControl_Goncharov.WindowFolder.EmployeeFolder"
+        mc:Ignorable="d"
+        Title="Добавление предмета"
+        Height="750" Width="1600"
+        MaxHeight="750" MaxWidth="1600"
+        MinHeight="750" MinWidth="1600"
+        WindowStartupLocation="CenterScreen"
+        Icon="/MedStockControl_Goncharov;component/ResourceFolder/Dictionary/ImageFolder/MedLogo.jpg" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="219"/>
+            <ColumnDefinition Width="123"/>
+            <ColumnDefinition Width="121*"/>
+            <ColumnDefinition Width="222"/>
+            <ColumnDefinition Width="123*"/>
+            <ColumnDefinition Width="334"/>
+            <ColumnDefinition Width="93*" />
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Label Content="Добавления препарата" Grid.Column="3" Grid.Row="1"
+               Style="{DynamicResource LabelMain}" Grid.ColumnSpan="5" />
+
+
+
+        <Label Content="Название" Grid.Column="1" Grid.Row="2"
+               Style="{DynamicResource LabelSecond}" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Name_StuffTB" Grid.Column="3" Grid.Row="2"/>
+
+
+        <Label Content="Производитель" Grid.Column="1" Grid.Row="3"
+            Style="{DynamicResource LabelSecond}" Grid.ColumnSpan="2" />
+        <ComboBox x:Name="Manufacturer_StuffCB"
+                  Grid.Column="3" Grid.Row="3"
+                  MouseDoubleClick="AddNewManufacturer_MouseDoubleClick"/>
+
+
+        <Label Content="Состав" Grid.Column="1" Grid.Row="4"
+            Style="{DynamicResource LabelSecond}" Grid.ColumnSpan="2" />
+        <TextBox x:Name="Composition_StuffTB" Grid.Column="3" Grid.Row="4"/>
+
+
+        <Label Content="Описание" Grid.Column="1" Grid.Row="5"
+            Style="{DynamicResource LabelSecond}" Grid.ColumnSpan="2" />
+        <TextBox x:Name="Description_StuffTB" 
+                 Grid.Column="3" Grid.Row="5" />
+
+        <Label Content="Дата выпуска" Grid.Column="1" Grid.Row="6"
+            Style="{DynamicResource LabelSecond}" Grid.ColumnSpan="2" />
+        <DatePicker x:Name="DateOfRelease_StuffTB" SelectedDateFormat="Short" 
+                 Grid.Column="3" Grid.Row="6" SelectedDateChanged="DateOfRelease_StuffTB_SelectedDateChanged" />
+
+
+
+
+
+        <Label Content="Показания" Grid.Column="4" Grid.Row="2"
+            Style="{DynamicResource LabelSecond}" />
+        <TextBox x:Name="Indication_StuffTB" 
+            Grid.Column="5" Grid.Row="2" />
+
+        <Label Content="Противопоказания" Grid.Column="4" Grid.Row="3"
+            Style="{DynamicResource LabelSecond}" Margin="10" />
+        <TextBox x:Name="Contraindication_StuffTB" 
+            Grid.Column="5" Grid.Row="3" />
+
+        <Label Content="Способ применения" Grid.Column="4" Grid.Row="4"
+            Style="{DynamicResource LabelSecond}" />
+        <TextBox x:Name="Usage_StuffTB" 
+            Grid.Column="5" Grid.Row="4" />
+
+        <Label Content="Побочные эффекты" Grid.Column="4" Grid.Row="5"
+            Style="{DynamicResource LabelSecond}" />
+        <TextBox x:Name="SideEffects_StuffTB" 
+            Grid.Column="5" Grid.Row="5" />
+
+        <Label Content="Срок годности" Grid.Column="4" Grid.Row="6"
+            Style="{DynamicResource LabelSecond}" />
+        <DatePicker x:Name="ExpirationDate_StuffTB" 
+            Grid.Column="5" Grid.Row="6" SelectedDateChanged="ExpirationDate_StuffTB_SelectedDateChanged" />
+
+
+
+
+
+        <Label Content="Передозировка" Grid.Column="6" Grid.Row="2"
+            Style="{DynamicResource LabelSecond}" />
+        <TextBox x:Name="Overdose_StuffTB" 
+            Grid.Column="7" Grid.Row="2" />
+
+        <Label Content="Лекарственные взаимодействия"
+               Grid.Column="6" Grid.Row="3"
+            Style="{DynamicResource LabelSecond}"/>
+        <TextBox x:Name="Interaction_StuffTB" 
+            Grid.Column="7" Grid.Row="3"/>
+
+        <Label Content="Особые указания" Grid.Column="6" Grid.Row="4"
+            Style="{DynamicResource LabelSecond}"/>
+        <TextBox x:Name="SpecInstruct_StuffTB" 
+            Grid.Column="7" Grid.Row="4" />
+
+        <Label Content="Условия хранения" Grid.Column="6" Grid.Row="5"
+            Style="{DynamicResource LabelSecond}"/>
+        <TextBox x:Name="StorageСondition_StuffTB" 
+            Grid.Column="7" Grid.Row="5" />
+
+        <Label Content="Условия отпуска" Grid.Column="6" Grid.Row="6"
+            Style="{DynamicResource LabelSecond}" Margin="10,7,10,6"/>
+        <ComboBox x:Name="СonditionForDispensing_StuffCB" 
+            Grid.Column="7" Grid.Row="6"
+              MouseDoubleClick="AddNewCondition_MouseDoubleClick" />
+
+
+
+
+
+        <Label Content="Количество штук" 
+            Grid.Column="6" Grid.Row="7"
+            Style="{DynamicResource LabelSecond}" />
+        <TextBox x:Name="Amount_StuffTB" 
+            Grid.Column="7" Grid.Row="7" />
+
+
+
+        <Button
+                Content="Добавить"
+                Grid.Column="6" Grid.Row="8" Click="AddStuff_Click" Grid.ColumnSpan="2" />
+        <Button Content="Назад"
+                Grid.Column="1" Grid.Row="8"
+                Click="Close_Click"  />
+
+
+        <Label Content="Фармакотерапевтическая группа" Grid.Column="1" Grid.Row="7"
+            Style="{DynamicResource LabelSecond}" Grid.ColumnSpan="2"  />
+        <ComboBox x:Name="PharmacotherapeuticGroup_StuffCB" 
+            Grid.Column="3" Grid.Row="7"
+                  MouseDoubleClick="AddNewFramGroup_MouseDoubleClick" />
+
+        <Label Content="Форма выпуска" Grid.Column="4" Grid.Row="7"
+            Style="{DynamicResource LabelSecond}" />
+        <TextBox x:Name="ReleaseForm_StuffTB" 
+            Grid.Column="5" Grid.Row="7" Margin="10" />
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>
